@@ -6,5 +6,8 @@ module.exports = {
     },
     findUser(condition){
         return user.findOne({where: condition})
+    },
+    findUserByPk(id){
+        return user.findByPk(id);
     }
 }

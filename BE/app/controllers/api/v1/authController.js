@@ -40,5 +40,43 @@ module.exports = {
                 message:err.message,
             });
         })
+    },
+    
+    authorize(req, res, next){
+        const bearerToken = req.headers.authorization;
+        
+        if(!bearerToken){
+            res.status(403).json({
+                message:"unauthorized",
+            })
+        }
+        const token = bearerToken.split ("Bearer ")[1];
+
+        authService.authorize(token).then((user) => {
+            if (!user) {
+                res.status(403).json({
+                    message:"unauthorized",
+                })
+                return;
+            }
+
+            req.user = user;
+            next();
+        }).catch((err) => {
+            res.status(403).json({
+                message:"unauthorized",
+            })
+        })
+
+    },
+
+    whoAmI(req, res){
+        const user = req.user;
+
+        res.status(201).json({
+            status: "OK",
+            data : user,
+        })
     }
+    
 }
