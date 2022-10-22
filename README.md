@@ -17,3 +17,5 @@
  password : admin123
  
  #openAPI on folder docs
+ # run the swagger Ui on
+   [localhos](http://localhost:8001/api-docs/) default route
