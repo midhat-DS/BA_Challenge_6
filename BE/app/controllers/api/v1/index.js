@@ -3,7 +3,7 @@
  * @author Fikri Rahmat Nurhidayat
  */
 
-const cars = require("./cars");
+const cars = require("./carsController");
 const auth = require("./authController")
 
 module.exports = {
