@@ -34,7 +34,7 @@ module.exports ={
         },
 
         createCars  (req, res) {
-            carsService.createCars(req.body, req.user.nama).then((cars) => {
+            carsService.createCars(req.body, req.user.name).then((cars) => {
                 res.status(201).json({
                 status: "Success",
                 message: "Success Add New Car",
@@ -51,7 +51,7 @@ module.exports ={
         },
 
         updateCars (req, res)  {
-            carsService.updateCars( req.body, req.user.nama, req.params.id).then((cars) => {
+            carsService.updateCars( req.body, req.user.name, req.params.id).then((cars) => {
                 res.status(200).json({
                 status: "Success",
                 message: "Success Update Car Data",

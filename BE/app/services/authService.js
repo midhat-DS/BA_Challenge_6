@@ -42,14 +42,14 @@ module.exports ={
         if (user && bcrypt.compareSync(password, user.password)) {
             const token = jwt.sign({
                 id: user.id,
-                name:user.nama,
+                name:user.name,
                 email: user.email,
                 roleId: user.roleId,
             }, 'rahasia')
     
             return {
                     id: user.id,
-                    name: user.nama,
+                    name: user.name,
                     email: user.email,
                     roleId: user.roleId,
                     role : user.role.name,
