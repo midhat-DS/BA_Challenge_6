@@ -19,3 +19,6 @@
  #openAPI on folder docs
  # run the swagger Ui on
    [localhos](http://localhost:8001/api-docs/) default route
+ 
+ # note 
+  its working fine before push to git
